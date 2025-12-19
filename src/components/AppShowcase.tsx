@@ -1,42 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
 import  ShowcaseItem  from "./ShowcaseItem";
-import {type ColorTheme } from "../config/colors";  
+import {type ColorTheme } from "../config/colors"; 
+import { showcaseItems } from "../constants"; 
 interface AppShowcaseProps {
 	theme: ColorTheme;
 }
 
 export const AppShowcase: React.FC<AppShowcaseProps> = ({ theme }) => {
-	const showcaseItems = [
-		{
-			title: "Create Beautiful Posts",
-			description:
-				"Share your moments with stunning photos and engaging captions. Express yourself with our intuitive post creation interface.",
-			image:
-				"/images/create_post.png",
-		},
-		{
-			title: "Engage with Community",
-			description:
-				"Connect with friends and creators through likes, comments, and shares. Build meaningful connections in a vibrant community.",
-			image:
-				"/images/post_dark.png",
-		},
-		{
-			title: "Your Personal Space",
-			description:
-				"Customize your profile and showcase your creativity. Manage your posts and saved content all in one place.",
-			image:
-				"images/user_post.png",
-		},
-	];
 
 	return (
 		<section
 			className="py-20 px-6"
 			style={{ backgroundColor: theme.background }}
 		>
-			<div className="max-w-6xl mx-auto space-y-32">
+			<div className="max-w-6xl mx-auto space-y-32 overflow-hidden">
 				<motion.div
 					className="text-center mb-20"
 					initial={{ opacity: 0, y: 30 }}

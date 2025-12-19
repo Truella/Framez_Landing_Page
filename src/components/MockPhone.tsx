@@ -1,20 +1,40 @@
 import React from "react";
 import { Heart, MessageCircle, Share2, User2 } from "lucide-react";
-import {type ColorTheme } from "../config/colors";
+import { type ColorTheme } from "../config/colors";
 import type { MockPhoneItem } from "../types";
 
 interface MockPhoneProps {
 	theme: ColorTheme;
-	item: MockPhoneItem
+	item: MockPhoneItem;
+	isMobile?: boolean;
+	isActive?: boolean;
 }
 
-export const MockPhone: React.FC<MockPhoneProps> = ({ theme, item }) => {
+export const MockPhone: React.FC<MockPhoneProps> = ({
+	theme,
+	item,
+	isMobile = false,
+	isActive = false,
+}) => {
+	const mobileClasses = isMobile
+		? `${isActive ? "scale-100 opacity-100 z-10" : "scale-90 opacity-40 z-0"}`
+		: "";
+
 	return (
 		<div
-			className={`absolute left-1/2 top-1/2 -translate-1/2 rounded-2xl overflow-hidden shadow-md mx-auto hover:transform ${item.hoverClass} transition-all duration-500`}
+			className={`
+        rounded-2xl overflow-hidden shadow-md mx-auto transition-all duration-500
+        ${
+					isMobile
+						? `absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${mobileClasses}`
+						: `absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${item.hoverClass}`
+				}
+      `}
 			style={{
 				backgroundColor: theme.background,
 				maxWidth: "320px",
+				width: "85vw",
+				maxHeight: "600px",
 				border: `1px solid ${theme.border}`,
 			}}
 		>
@@ -25,7 +45,9 @@ export const MockPhone: React.FC<MockPhoneProps> = ({ theme, item }) => {
 						style={{
 							background: `linear-gradient(135deg, ${theme.gradientStart}, ${theme.gradientEnd})`,
 						}}
-					><User2 color="#ffffff"/></div>
+					>
+						<User2 color="#ffffff" />
+					</div>
 					<div className="flex-1">
 						<div className="font-semibold" style={{ color: theme.textPrimary }}>
 							{item.username}
@@ -41,7 +63,9 @@ export const MockPhone: React.FC<MockPhoneProps> = ({ theme, item }) => {
 					style={{
 						background: `linear-gradient(135deg, ${theme.gradientStart}, ${theme.gradientEnd})`,
 					}}
-				><img src={item.image} alt="" className="object-cover h-full"/></div>
+				>
+					<img src={item.image} alt="" className="object-cover h-full w-full" />
+				</div>
 
 				<div className="flex items-center gap-6 py-2">
 					<Heart size={24} style={{ color: theme.like }} />

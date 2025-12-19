@@ -1,6 +1,6 @@
 import React from "react";
-import {type ColorTheme } from "../config/colors";
-import { MockPhone } from "./MockPhone";
+import { type ColorTheme } from "../config/colors";
+import { MockPhoneShowcase } from "./MockPhoneShowcase";
 import { mockPhoneData } from "../constants";
 interface HeroProps {
 	theme: ColorTheme;
@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
 								color: "#ffffff",
 							}}
 						>
-							Framez
+							Portfolio Project
 						</div>
 					</div>
 
@@ -60,8 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
 						>
 							Watch Demo
 						</button>
-
-						<button
+						{/*<button
 							className="px-8 py-4 rounded-lg font-semibold transition-all"
 							style={{
 								backgroundColor: theme.surface,
@@ -71,21 +70,11 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
 						>
 							View Screenshots
 						</button>
+					 */}
 					</div>
 				</div>
 
-				<div className="relative group">
-					<div
-						className="rounded-3xl overflow-hidden shadow-sm"
-						style={{
-							background: `linear-gradient(135deg, ${theme.gradientStart}, ${theme.gradientEnd})`,
-						}}
-					>
-						<div className="min-h-[80vh] relative" style={{ backgroundColor: theme.surface }}>
-                            {mockPhoneData.map((item)=><MockPhone theme={theme} item={item} />)}
-						</div>
-					</div>
-				</div>
+				<MockPhoneShowcase theme={theme} mockPhoneData={mockPhoneData} />
 			</div>
 		</section>
 	);
