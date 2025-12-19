@@ -1,5 +1,5 @@
 import React from "react";
-import { Camera, Moon, Sun } from "lucide-react";
+import {Moon, Sun } from "lucide-react";
 import {type ColorTheme } from "../config/colors";
 
 interface HeaderProps {
