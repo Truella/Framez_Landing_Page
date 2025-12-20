@@ -1,7 +1,7 @@
 import React from "react";
 import { Heart, MessageCircle, Share2, User2 } from "lucide-react";
-import { type ColorTheme } from "../config/colors";
-import type { MockPhoneItem } from "../types";
+import { type ColorTheme } from "../../config/colors";
+import type { MockPhoneItem } from "../../types";
 
 interface MockPhoneProps {
 	theme: ColorTheme;

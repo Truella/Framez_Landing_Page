@@ -1,5 +1,5 @@
 import React from "react";
-import {type ColorTheme } from "../config/colors";
+import {type ColorTheme } from "../../config/colors";
 
 interface CTAProps {
 	theme: ColorTheme;
