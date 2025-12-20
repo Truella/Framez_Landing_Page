@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { colors, darkColors } from "./config/colors";
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
+import { Header } from "./components/header/Header";
+import { Hero } from "./components/hero/Hero";
 import { AppShowcase } from "./components/AppShowcase";
-import { CTA } from "./components/CTA";
-import { Footer } from "./components/Footer";
+import { CTA } from "./components/footer/CTA";
+import { Footer } from "./components/footer/Footer";
 
 export default function App() {
 	const [isDark, setIsDark] = useState(false);

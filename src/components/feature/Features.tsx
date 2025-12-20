@@ -1,6 +1,6 @@
 import React from "react";
 import { Camera, Heart, Grid } from "lucide-react";
-import {type ColorTheme } from "../config/colors";
+import {type ColorTheme } from "../../config/colors";
 import { FeatureCard } from "./FeatureCard";
 
 interface FeaturesProps {

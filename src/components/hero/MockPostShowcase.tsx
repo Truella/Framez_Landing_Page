@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { type ColorTheme } from "../config/colors";
-import type { MockPhoneItem } from "../types";
-import { MockPhone } from "./MockPhone";
+import { type ColorTheme } from "../../config/colors";
+import type { MockPhoneItem } from "../../types";
+import { MockPhone } from "./MockPost";
 
 interface MockPhoneShowcaseProps {
 	theme: ColorTheme;
